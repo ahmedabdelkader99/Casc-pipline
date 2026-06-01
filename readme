@@ -14,9 +14,12 @@ Start the Jenkins container and configure the admin user using environment varia
 docker run -d \
   --name jenkins \
   -p 8080:8080 \
+  -p 50000:50000 \
   -e JENKINS_ADMIN_ID=admin \
   -e JENKINS_ADMIN_PASSWORD='StrongPassword123!' \
-  -e GITHUB_SSH_PRIVATE_KEY="$(cat /root/.ssh/id_rsa.pub)" \
+  -e PROXMOX_PASSWORD='YourProxmoxPassword' \
+  -e CODEK9_USERNAME='codek9' \
+  -e CODEK9_PASSWORD='YourCodeK9Password' \
   jenkins:v1
 ```
 
