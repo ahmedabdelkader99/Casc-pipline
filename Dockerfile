@@ -6,8 +6,6 @@ RUN apt-get update && \
     apt-get install -y \
     curl \
     gnupg \
-    software-properties-common \
-    lsb-release \
     sshpass \
     iputils-ping \
     jq \
