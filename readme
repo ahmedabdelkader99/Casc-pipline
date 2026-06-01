@@ -16,6 +16,7 @@ docker run -d \
   -p 8080:8080 \
   -e JENKINS_ADMIN_ID=admin \
   -e JENKINS_ADMIN_PASSWORD='StrongPassword123!' \
+  -e GITHUB_SSH_PRIVATE_KEY="$(cat /root/.ssh/id_rsa.pub)" \
   jenkins:v1
 ```
 
