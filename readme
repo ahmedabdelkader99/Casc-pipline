@@ -1,0 +1,41 @@
+# Build Jenkins Image
+
+Build the custom Jenkins image:
+
+```bash
+docker build -t jenkins:v1 .
+```
+
+# Run Jenkins Container
+
+Start the Jenkins container and configure the admin user using environment variables:
+
+```bash
+docker run -d \
+  --name jenkins \
+  -p 8080:8080 \
+  -e JENKINS_ADMIN_ID=admin \
+  -e JENKINS_ADMIN_PASSWORD='MyStrongPassword123!' \
+  jenkins:v1
+```
+
+# Verify Jenkins
+
+Open your browser and navigate to:
+
+```text
+http://SERVER_IP:8080
+```
+
+Example:
+
+```text
+http://102.43.57.128:8080
+```
+
+Login using the credentials configured through the environment variables:
+
+```text
+Username: admin
+Password: MyStrongPassword123!
+```
