@@ -27,30 +27,3 @@ credentials:
               description: "CodeK9 Credentials"
               username: "${CODEK9_USERNAME}"
               password: "${CODEK9_PASSWORD}"
-              #this will be modefied to use k9 key instead github ssh key
-          - basicSSHUserPrivateKey:
-              id: "github-ssh"
-              description: "GitHub SSH Key"
-              username: "ahmedabdelkader99"
-              privateKeySource:
-                directEntry:
-                  privateKey: "${GITHUB_SSH_PRIVATE_KEY}"
-jobs:
-  - script: >-
-      pipelineJob('VM-Provisioning') {
-
-        definition {
-          cpsScm {
-            scm {
-              git {
-                remote {
-                  url('git@github.com:ahmedabdelkader99/Casc-pipline.git')
-                  credentials('github-ssh')
-                }
-                branch('*/main')
-              }
-            }
-            scriptPath('pipline.groovy')
-          }
-        }
-      }
