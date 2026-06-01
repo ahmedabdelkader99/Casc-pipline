@@ -1,0 +1,12 @@
+jenkins:
+  systemMessage: "Managed by Jenkins Configuration as Code"
+  numExecutors: 2
+  securityRealm:
+    local:
+      allowsSignup: false
+      users:
+        - id: admin
+          password: admin123
+  authorizationStrategy:
+    loggedInUsersCanDoAnything:
+      allowAnonymousRead: false

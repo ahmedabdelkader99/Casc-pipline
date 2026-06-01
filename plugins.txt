@@ -1,0 +1,17 @@
+git
+github
+workflow-aggregator
+pipeline-stage-view
+ssh-agent
+ansible
+curl
+gnupg
+software-properties-common
+lsb-release
+sshpass
+iputils-ping
+jq
+configuration-as-code
+credentials
+docker-workflow
+docker-plugin
