@@ -5,8 +5,25 @@ jenkins:
     local:
       allowsSignup: false
       users:
-        - id: admin
-          password: admin123
+        - id: ${JENKINS_ADMIN_ID}
+          password: ${JENKINS_ADMIN_PASSWORD}
   authorizationStrategy:
     loggedInUsersCanDoAnything:
       allowAnonymousRead: false
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - string:
+              id: "proxmox-user"
+              description: "Proxmox Username"
+              secret: "root@pam"
+          - string:
+              id: "proxmox-password"
+              description: "Proxmox Password"
+              secret: "${PROXMOX_PASSWORD}"
+          - usernamePassword:
+              id: "codek9-creds"
+              description: "CodeK9 Credentials"
+              username: "${CODEK9_USERNAME}"
+              password: "${CODEK9_PASSWORD}"
